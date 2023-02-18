@@ -10,6 +10,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>eureka_service</module>
+        <module>product_service</module>
+        <module>order_service</module>
     </modules>
 
     <parent>
