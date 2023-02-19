@@ -33,12 +33,13 @@ public class OrderController {
      *  1.使用@LoadBalanced声明RestTemplate
      *  2.使用服务名称替换ip地址
      */
-    /*@RequestMapping(value = "/buy/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/buy/{id}",method = RequestMethod.GET)
     public Product findById(@PathVariable Long id) {
         Product product = null;
+        //服务名称不能用下划线"_",要用"-"
         product = restTemplate.getForObject("http://service-product/product/1", Product.class);
         return product;
-    }*/
+    }
 
     /**
      * 参数:商品id
@@ -47,12 +48,12 @@ public class OrderController {
      *      2.需要调用商品服务
      *  使用java中的urlconnection,httpclient,okhttp
      */
-	@RequestMapping(value = "/buy/{id}",method = RequestMethod.GET)
+	/*@RequestMapping(value = "/buy/{id}",method = RequestMethod.GET)
 	public Product findById(@PathVariable Long id) {
 		//调用discoveryClient方法
 		//已调用服务名称获取所有的元数据
 		//使用ip直接调用时，初始化RestTemplate不能加@LoadBalanced注解，去掉即可
-		List<ServiceInstance> instances = discoveryClient.getInstances("service_product");
+		List<ServiceInstance> instances = discoveryClient.getInstances("service-product");
 		//获取唯一的一个元数据
 		ServiceInstance instance = instances.get(0);
 		//根据元数据中的主机地址和端口号拼接请求微服务的URL
@@ -60,7 +61,7 @@ public class OrderController {
 		//如何调用商品服务?
 		product = restTemplate.getForObject("http://"+instance.getHost()+":"+instance.getPort()+"/product/1",Product.class);
 		return product;
-	}
+	}*/
 
 
 }

@@ -11,3 +11,6 @@ eureka:
     serviceUrl:
       #配置暴露给eureka client的请求地址
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    enable-self-preservation: false #关闭自我保护机制
+    eviction-interval-timer-in-ms: 4000 #提出服务间隔

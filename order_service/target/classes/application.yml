@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: service_order #服务名称
+    name: service-order #服务名称
   datasource:
     url: jdbc:mysql://101.43.66.224:3306/nettyTest
     username: root

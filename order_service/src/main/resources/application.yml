@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: service_order #服务名称
+    name: service-order #服务名称
   datasource:
     url: jdbc:mysql://101.43.66.224:3306/nettyTest
     username: root
@@ -23,3 +23,17 @@ eureka:
     instance-id: ${spring.cloud.client.ip-address}:${server.port} #向注册中心中注册服务id
     #lease-renewal-interval-in-seconds: 5 #向注册中心中注册服务id
     # lease-expiration-duration-in-seconds: 10 #续约到期的时间
+
+#logging:
+#  level:
+#    root: debug
+
+#修改ribbon的负载均衡策略   服务名 -  ribbon - NFLoadBalancerRuleClassName : 策略
+#service-product:
+#  ribbon:
+#    #NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#    ConnectTimeout: 250 # Ribbon的连接超时时间
+#    ReadTimeout: 1000 # Ribbon的数据读取超时时间
+#    OkToRetryOnAllOperations: true # 是否对所有操作都进行重试
+#    MaxAutoRetriesNextServer: 1 # 切换实例的重试次数
+#    MaxAutoRetries: 1 # 对当前实例的重试次数

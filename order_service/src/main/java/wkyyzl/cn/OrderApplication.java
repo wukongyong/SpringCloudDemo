@@ -19,7 +19,7 @@ public class OrderApplication {
      *      2.在使用的时候,调用其方法完成操作 (getXX,postxxx)
      * * @LoadBalanced : 是ribbon提供的负载均衡的注解
      */
-    //@LoadBalanced
+    @LoadBalanced
     @Bean
     public RestTemplate restTemplate() {
         return new RestTemplate();
